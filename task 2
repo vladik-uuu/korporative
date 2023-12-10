@@ -1,0 +1,18 @@
+using System;
+using System.Linq;
+
+class Program
+{
+    static void Main()
+    {
+        //Инициализируем цифру D и последовательность чисел
+        int D = 5;
+        int[] sequence = { -1, 1, -2, 4, -8, 6, -9, 9, -11, 15, 21, 28, 45, -62 };
+
+        //Первый положительный элемент, оканчивающийся цифрой D
+        int firstPositiveEndingWithD = sequence.Where(n => n > 0 && n % 10 == D).FirstOrDefault();
+
+        //Выводим результат
+        Console.WriteLine("Первый положительный элемент, оканчивающийся цифрой " + D + ": " + firstPositiveEndingWithD);
+    }
+}
