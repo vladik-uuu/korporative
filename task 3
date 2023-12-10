@@ -1,0 +1,25 @@
+using System;
+using System.Linq;
+
+class Program
+{
+    static void Main()
+    {
+        //Инициализируем число L и последовательность строк
+        int L = 5;
+        string[] sequence = { "55564", "86789", "dffff", "6jy56", "yyu65", "sgter", "09945", "cs256" };
+
+        //Находим последнюю строку, начинающуюся с цифры и имеющую длину L
+        string lastStringStartingWithDigit = sequence.LastOrDefault(s => char.IsDigit(s[0]) && s.Length == L);
+
+        //Выводим результат
+        if (lastStringStartingWithDigit != null)
+        {
+            Console.WriteLine("Последняя строка, начинающаяся с цифры и имеющая длину " + L + ": " + lastStringStartingWithDigit);
+        }
+        else
+        {
+            Console.WriteLine("Not found");
+        }
+    }
+}
